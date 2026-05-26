@@ -9,33 +9,28 @@
 </head>
 <body>
 
-    <header>
-        <h1>Lume<span>.</span></h1>
-        <p>Onde histórias se tornam estrelas e códigos constroem galáxias</p>
+    <header class="header-principal">
+        <div class="header-container">
+            <h1 class="logo">Lume<span>.</span></h1>
+            <nav class="menu-navegacao">
+                <a href="#sobre" class="menu-item">Quem é a tripulante?</a>
+                <a href="#estante" class="menu-item">Estante de livros</a>
+                <a href="#diario" class="menu-item">Diário de bordo</a>
+            </nav>
+        </div>
+        <p class="subtitulo">Onde histórias se tornam estrelas e códigos constroem galáxias</p>
     </header>
 
     <main class="container">
         
-        <section class="sobre-mim">
-            <img src="https://github.com/Fremaan3110.png" alt="Foto da Karen" class="avatar">
-            <div class="sobre-texto">
-                <h2><i class="fa-solid fa-user-astronaut"></i> A Tripulante</h2>
-                <p>Olá! Eu sou a Karen, estudante de tecnologia e apaixonada por livros. Este blog é o meu diário de bordo oficial, onde registro as minhas leituras preferidas e a minha jornada no mundo da programação. Bem-vindo ao meu espaço na órbita da internet!</p>
-                <div class="redes-sociais">
-                    <a href="https://github.com/Fremaan3110" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="secao-titulo">
-            <h2><i class="fa-solid fa-book-open"></i> Estante de Leituras</h2>
+        <section class="secao-titulo" id="estante">
+            <h2><i class="fa-solid fa-book-open"></i> Lendo Recentemente</h2>
         </section>
 
         <div class="estante">
             <article class="livro-card">
                 <div class="livro-capa">
-                    <img src="https://m.media-amazon.com/images/I/81m9fP+L7tL._AC_UF1000_1000_QL80_.jpg" alt="Capa do livro A Biblioteca da Meia-Noite">
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/81m9fP+L7tL._AC_UL600_SR600,400_.jpg" alt="Capa do livro A Biblioteca da Meia-Noite">
                 </div>
                 <div class="livro-info">
                     <h3>A Biblioteca da Meia-Noite</h3>
@@ -53,23 +48,11 @@
         </div>
 
         <section class="secao-titulo">
-            <h2><i class="fa-solid fa-terminal"></i> Diário de Bordo (Estudos Tech)</h2>
+            <h2><i class="fa-brands fa-spotify" style="color: #1ed760;"></i> Na Minha Órbita (Trilha Sonora)</h2>
         </section>
 
-        <div class="blog-grid">
-            <article class="post-card">
-                <span class="post-data">26 de Maio, 2026</span>
-                <h3>Primeiro Push Profissional com Git!</h3>
-                <p>Hoje concluí o Nível 1 do meu blog e fiz o meu primeiro 'git push' direto para o GitHub. Configurar o repositório e ver o site rodando no GitHub Pages foi incrível!</p>
-                <span class="post-tag">Git & GitHub</span>
-            </article>
-
-            <article class="post-card">
-                <span class="post-data">Hoje</span>
-                <h3>Dominando as Galáxias do CSS</h3>
-                <p>Comecei a estilizar o meu blog pessoal aplicando conceitos de CSS como Flexbox, gradientes radiais espaciais e efeitos de desfoque de vidro (backdrop-filter).</p>
-                <span class="post-tag">CSS3</span>
-            </article>
+        <div class="spotify-container">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0SMYvvisN87?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
 
     </main>
