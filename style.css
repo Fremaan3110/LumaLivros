@@ -1,0 +1,100 @@
+/* CONFIGURAÇÃO GERAL DA GALÁXIA */
+body {
+    background-color: #0b0118; /* Roxo espacial super escuro */
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Fundo degradê estilo nebulosa */
+    background-image: radial-gradient(circle at 50% 0%, #2e0854 0%, #0b0118 70%);
+}
+
+/* CABEÇALHO DO BLOG */
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+header h1 span {
+    color: #ffd700; /* Ponto final dourado */
+}
+
+header p {
+    color: #b0bec5;
+    font-style: italic;
+}
+
+/* A ESTANTE DE LIVROS (GRID RESPONSIVO) */
+.estante {
+    max-width: 800px;
+    width: 100%;
+}
+
+/* O CARD DO LIVRO */
+.livro-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(138, 43, 226, 0.2); /* Borda roxa sutil */
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    gap: 30px;
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito Hover (Quando passa o mouse no livro) */
+.livro-card:hover {
+    transform: translateY(-5px); /* O card sobe de leve */
+    border-color: #ffd700; /* A borda brilha em dourado */
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+/* CAPA DO LIVRO */
+.livro-capa img {
+    width: 150px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* INFORMAÇÕES DO LIVRO */
+.livro-info h2 {
+    margin-top: 0;
+    color: #ffffff;
+    font-size: 1.8rem;
+}
+
+.genero-tag {
+    background: #4b0082; /* Fundo roxo escuro para a tag */
+    color: #ffd700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* SISTEMA DE ESTRELAS */
+.estrelas {
+    margin: 15px 0;
+}
+
+.estrelas i {
+    color: #ffd700; /* Estrelas douradas */
+    margin-right: 3px;
+}
+
+.resenha-texto {
+    color: #e0e0e0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
