@@ -1,100 +1,256 @@
 /* CONFIGURAÇÃO GERAL DA GALÁXIA */
 body {
-    background-color: #0b0118; /* Roxo espacial super escuro */
+    background-color: #0b0118;
     color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    padding: 40px 20px;
+    padding: 0;
+    background-image: radial-gradient(circle at 50% 0%, #2e0854 0%, #0b0118 60%);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    /* Fundo degradê estilo nebulosa */
-    background-image: radial-gradient(circle at 50% 0%, #2e0854 0%, #0b0118 70%);
 }
 
-/* CABEÇALHO DO BLOG */
+.container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    flex: 1; /* Faz o conteúdo empurrar o rodapé para o final da página */
+}
+
+/* CABEÇALHO (HEADER) */
 header {
     text-align: center;
-    margin-bottom: 50px;
+    padding: 60px 20px 30px 20px;
 }
 
 header h1 {
-    font-size: 3rem;
-    margin-bottom: 5px;
+    font-size: 3.5rem;
+    margin: 0 0 10px 0;
     letter-spacing: 2px;
 }
 
 header h1 span {
-    color: #ffd700; /* Ponto final dourado */
+    color: #ffd700;
 }
 
 header p {
     color: #b0bec5;
     font-style: italic;
+    margin: 0;
+    font-size: 1.1rem;
 }
 
-/* A ESTANTE DE LIVROS (GRID RESPONSIVO) */
+/* TÍTULOS DAS SECÇÕES */
+.secao-titulo {
+    margin: 50px 0 25px 0;
+    border-bottom: 1px solid rgba(138, 43, 226, 0.3);
+    padding-bottom: 10px;
+}
+
+.secao-titulo h2 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: #ffd700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* CARD SOBRE MIM */
+.sobre-mim {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(138, 43, 226, 0.15);
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+}
+
+.avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 3px solid #8a2be2;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+}
+
+.sobre-texto h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+}
+
+.sobre-texto p {
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+}
+
+.redes-sociais {
+    display: flex;
+    gap: 15px;
+}
+
+.redes-sociais a {
+    color: #ffffff;
+    text-decoration: none;
+    background: rgba(138, 43, 226, 0.2);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background 0.3s, border-color 0.3s;
+    border: 1px solid transparent;
+}
+
+.redes-sociais a:hover {
+    background: rgba(138, 43, 226, 0.4);
+    border-color: #ffd700;
+}
+
+/* ESTANTE DE LIVROS */
 .estante {
-    max-width: 800px;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
-/* O CARD DO LIVRO */
 .livro-card {
     background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(138, 43, 226, 0.2); /* Borda roxa sutil */
+    border: 1px solid rgba(138, 43, 226, 0.2);
     border-radius: 15px;
     padding: 25px;
     display: flex;
     gap: 30px;
-    backdrop-filter: blur(10px); /* Efeito de vidro fosco */
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
-/* Efeito Hover (Quando passa o mouse no livro) */
 .livro-card:hover {
-    transform: translateY(-5px); /* O card sobe de leve */
-    border-color: #ffd700; /* A borda brilha em dourado */
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+    transform: translateY(-5px);
+    border-color: #ffd700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.15);
 }
 
-/* CAPA DO LIVRO */
 .livro-capa img {
-    width: 150px;
+    width: 120px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 
-/* INFORMAÇÕES DO LIVRO */
-.livro-info h2 {
-    margin-top: 0;
-    color: #ffffff;
-    font-size: 1.8rem;
+.livro-info h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.6rem;
 }
 
 .genero-tag {
-    background: #4b0082; /* Fundo roxo escuro para a tag */
+    background: #4b0082;
     color: #ffd700;
-    padding: 5px 12px;
+    padding: 4px 10px;
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-/* SISTEMA DE ESTRELAS */
 .estrelas {
-    margin: 15px 0;
+    margin: 12px 0;
 }
 
 .estrelas i {
-    color: #ffd700; /* Estrelas douradas */
+    color: #ffd700;
     margin-right: 3px;
 }
 
 .resenha-texto {
     color: #e0e0e0;
     line-height: 1.6;
-    font-size: 1rem;
+    margin: 0;
+}
+
+/* GRID DO BLOG (DIÁRIO DE BORDO) */
+.blog-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide em duas colunas perfeitas */
+    gap: 20px;
+}
+
+.post-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(138, 43, 226, 0.15);
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.post-card:hover {
+    border-color: #8a2be2;
+    transform: translateY(-3px);
+}
+
+.post-data {
+    color: #b0bec5;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+}
+
+.post-card h3 {
+    margin: 0 0 12px 0;
+    font-size: 1.3rem;
+    color: #ffffff;
+}
+
+.post-card p {
+    color: #cbd5e1;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    margin: 0 0 20px 0;
+    flex: 1; /* Faz o texto ocupar o espaço para a tag ficar alinhada abaixo */
+}
+
+.post-tag {
+    align-self: flex-start;
+    background: rgba(138, 43, 226, 0.1);
+    color: #d8b4fe;
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+}
+
+/* RODAPÉ (FOOTER) */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: #06010d;
+    border-top: 1px solid rgba(138, 43, 226, 0.1);
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* RESPONSIVIDADE (Para o site ficar perfeito no telemóvel) */
+@media (max-width: 650px) {
+    .sobre-mim, .livro-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .redes-sociais {
+        justify-content: center;
+    }
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
 }
