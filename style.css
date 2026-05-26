@@ -17,12 +17,30 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Fundo degradê estilo nebulosa - igual a referência */
+    /* Fundo degradê estilo nebulosa */
     background-image: 
-        radial-gradient(circle at 10% 10%, rgba(138, 43, 226, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(0, 191, 255, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 10% 10%, rgba(138, 43, 226, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 191, 255, 0.15) 0%, transparent 40%),
         linear-gradient(180deg, #0a0118 0%, #15022e 100%);
-    background-attachment: fixed; /* Mantém o fundo parado ao rolar */
+    background-attachment: fixed;
+    position: relative; /* Contexto necessário para as estrelas funcionarem */
+}
+
+/* 🌌 CAMADA MÁGICA DAS ESTRELAS */
+body::before {
+    content: "";
+    position: fixed; /* Mantém as estrelas fixas enquanto você rola a página */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Link de uma imagem real de estrelas espaciais transparentes */
+    background-image: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.12; /* Deixa as estrelas sutis para não atrapalhar a leitura do texto */
+    z-index: -1; /* Joga as estrelas para trás de todos os textos e cartões */
+    pointer-events: none; /* Garante que você consiga clicar nos botões normalmente */
 }
 
 /* CONTAINER PRINCIPAL */
