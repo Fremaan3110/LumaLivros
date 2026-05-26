@@ -1,68 +1,70 @@
-/* CONFIGURAÇÃO GERAL DA GALÁXIA */
+/* CONFIGURAÇÃO GERAL */
+:root {
+    --fundo-escuro: #0a0118; /* Roxo muito escuro, quase preto */
+    --fundo-cartao: rgba(255, 255, 255, 0.03); /* Efeito de vidro fosco */
+    --cor-neon: #8a2be2; /* Roxo vibrante */
+    --cor-dourado: #ffd700;
+    --texto-principal: #ffffff;
+    --texto-secundario: #b0bec5;
+}
+
 body {
-    background-color: #0b0118;
-    color: #ffffff;
+    background-color: var(--fundo-escuro);
+    color: var(--texto-principal);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: radial-gradient(circle at 50% 0%, #2e0854 0%, #0b0118 60%);
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
-}
-
-.container {
-    max-width: 900px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-    flex: 1;
-}
-
-/* CABEÇALHO COM MENU ALINHADO */
-.header-principal {
-    max-width: 900px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 40px 20px 20px 20px;
-    box-sizing: border-box;
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between; /* Empurra a logo para a esquerda e o menu para a direita */
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding-bottom: 20px;
-    margin-bottom: 15px;
+    /* Fundo degradê estilo nebulosa - igual a referência */
+    background-image: 
+        radial-gradient(circle at 10% 10%, rgba(138, 43, 226, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 191, 255, 0.1) 0%, transparent 40%),
+        linear-gradient(180deg, #0a0118 0%, #15022e 100%);
+    background-attachment: fixed; /* Mantém o fundo parado ao rolar */
 }
 
-.logo {
-    font-size: 2.5rem;
+/* CONTAINER PRINCIPAL */
+.container {
+    max-width: 1000px;
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* CABEÇALHO COM MENU DE NAVEGAÇÃO (TOP BAR) */
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Logo na esquerda, menu na direita */
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(10, 1, 24, 0.8); /* Fundo semi-transparente */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    border-bottom: 1px solid rgba(138, 43, 226, 0.1);
+    position: fixed; /* Mantém o menu no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 2rem;
     margin: 0;
     letter-spacing: 2px;
 }
 
-.logo span {
-    color: #ffd700;
+header h1 span {
+    color: var(--cor-neon);
 }
 
-.subtitulo {
-    color: #b0bec5;
-    font-style: italic;
-    margin: 0;
-    font-size: 1rem;
-}
-
-/* MENU DE NAVEGAÇÃO */
-.menu-navegacao {
+.menu {
     display: flex;
-    gap: 25px; /* Espaço entre os tópicos */
+    gap: 25px; /* Espaço entre os itens do menu */
 }
 
 .menu-item {
-    color: #b0bec5;
+    color: var(--texto-secundario);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
@@ -70,125 +72,132 @@ body {
 }
 
 .menu-item:hover {
-    color: #ffd700; /* Destaca em dourado ao passar o mouse */
+    color: var(--cor-neon);
     transform: translateY(-2px);
 }
 
-/* TÍTULOS DAS SEÇÕES */
-.secao-titulo {
-    margin: 40px 0 20px 0;
-    border-bottom: 1px solid rgba(138, 43, 226, 0.3);
-    padding-bottom: 10px;
+/* SEÇÃO PRINCIPAL (HERO) */
+.hero {
+    text-align: center;
+    padding: 150px 20px 80px 20px; /* Mais espaço no topo por causa do menu fixo */
 }
 
-.secao-titulo h2 {
+.hero p {
+    color: var(--texto-secundario);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.hero h2 {
+    font-size: 3.5rem;
     margin: 0;
-    font-size: 1.5rem;
-    color: #ffd700;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    line-height: 1.2;
 }
 
-/* CARD DE LIVROS */
-.estante {
+.hero h2 span {
+    color: var(--cor-neon);
+}
+
+/* ESTRUTURA DOS CARTÕES (CARDS) */
+.estante, .playlist-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cartões se adaptam */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background: var(--fundo-cartao);
+    border: 1px solid rgba(138, 43, 226, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(5px); /* Desfoque de fundo suave */
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    gap: 25px;
 }
 
-.livro-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(138, 43, 226, 0.2);
-    border-radius: 15px;
-    padding: 25px;
-    display: flex;
-    gap: 30px;
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s, border-color 0.3s;
+.card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(138, 43, 226, 0.5);
+    box-shadow: 0 10px 30px rgba(138, 43, 226, 0.1);
 }
 
-.livro-card:hover {
-    transform: translateY(-5px);
-    border-color: #ffd700;
+/* Detalhes específicos dos livros */
+.card-livro {
+    flex-direction: row; /* Imagem ao lado do texto */
+    align-items: center;
 }
 
-.livro-capa img {
-    width: 110px;
+.capa-livro img {
+    width: 100px;
     border-radius: 8px;
+    margin-right: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 
-.livro-info h3 {
-    margin: 0 0 8px 0;
+.info-livro h3 {
+    margin: 0 0 10px 0;
     font-size: 1.5rem;
 }
 
-.genero-tag {
-    background: #4b0082;
-    color: #ffd700;
-    padding: 4px 10px;
+.tag-genero {
+    background: rgba(138, 43, 226, 0.1);
+    color: var(--cor-neon);
+    padding: 5px 12px;
     border-radius: 20px;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: bold;
     text-transform: uppercase;
 }
 
 .estrelas {
-    margin: 12px 0;
+    margin: 15px 0;
 }
 
 .estrelas i {
-    color: #ffd700;
+    color: var(--cor-dourado);
     margin-right: 3px;
 }
 
-.resenha-texto {
-    color: #e0e0e0;
+.resenha {
+    color: var(--texto-secundario);
     line-height: 1.6;
-    margin: 0;
 }
 
-/* CONTAINER DO SPOTIFY */
-.spotify-container {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(30, 215, 96, 0.2); /* Borda sutil na cor do Spotify */
-    padding: 15px;
-    border-radius: 16px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
-    margin-bottom: 40px;
+/* Detalhes específicos do Spotify */
+.card-spotify {
+    text-align: center;
+}
+
+.spotify-embed {
+    width: 100%;
+    height: 380px;
+    border: none;
+    border-radius: 12px;
+}
+
+/* TÍTULOS DE SEÇÃO (ex: "Leituras Recentes") */
+.section-title {
+    width: 100%;
+    text-align: left;
+    margin-top: 80px;
+    border-bottom: 1px solid rgba(138, 43, 226, 0.1);
+    padding-bottom: 10px;
+}
+
+.section-title h2 {
+    font-size: 1.8rem;
+    color: var(-- texto-principal);
 }
 
 /* RODAPÉ */
 footer {
+    width: 100%;
     text-align: center;
-    padding: 25px 20px;
-    background: #06010d;
+    padding: 40px;
+    background: rgba(10, 1, 24, 0.9);
     border-top: 1px solid rgba(138, 43, 226, 0.1);
+    color: var(--texto-secundario);
     font-size: 0.9rem;
-    color: #94a3b8;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* RESPONSIVIDADE (Celular) */
-@media (max-width: 700px) {
-    .header-container {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-    .menu-navegacao {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .livro-card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
 }
