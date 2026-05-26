@@ -206,7 +206,7 @@ header h1 span {
 
 .section-title h2 {
     font-size: 1.8rem;
-    color: var(-- texto-principal);
+    color: var(--texto-principal);
 }
 
 /* RODAPÉ */
