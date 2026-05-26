@@ -1,176 +1,159 @@
-/* Variáveis: guardam cores para reutilizar no site */
-:root {
-  --fundo: #090015;
-  --roxo: #8a2be2;
-  --roxo-claro: #c084fc;
-  --texto: #ffffff;
-  --texto-suave: #c9bddb;
-  --card: rgba(255, 255, 255, 0.06);
-}
-
-/* Remove espaçamentos automáticos do navegador */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Estilo geral da página */
+/* FUNDO PRINCIPAL DO SITE */
 body {
+
+  /* Fonte do site */
   font-family: Arial, Helvetica, sans-serif;
-  color: var(--texto);
-  background:
-    radial-gradient(circle at top left, rgba(138, 43, 226, 0.35), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(72, 61, 139, 0.35), transparent 30%),
-    var(--fundo);
+
+  /* Cor do texto */
+  color: white;
+
+  /* Remove margens padrão */
+  margin: 0;
+
+  /* Remove espaçamentos */
+  padding: 0;
+
+  /* Faz o fundo ocupar a tela inteira */
   min-height: 100vh;
+
+  /* Necessário para posicionar elementos */
+  position: relative;
+
+  /* Esconde partes que saem da tela */
+  overflow-x: hidden;
+
+  /*
+    CAMADAS DO FUNDO
+    
+    radial-gradient = cria círculos de luz
+    linear-gradient = cria o degradê principal
+  */
+
+  background:
+
+    /* Luz roxa esquerda */
+    radial-gradient(
+      circle at top left,
+      rgba(138, 43, 226, 0.35),
+      transparent 30%
+    ),
+
+    /* Luz azul direita */
+    radial-gradient(
+      circle at bottom right,
+      rgba(72, 61, 139, 0.30),
+      transparent 35%
+    ),
+
+    /* Nuvem roxa central */
+    radial-gradient(
+      circle at center,
+      rgba(186, 85, 211, 0.12),
+      transparent 40%
+    ),
+
+    /* Fundo principal */
+    linear-gradient(
+      180deg,
+      #070011 0%,
+      #120020 40%,
+      #1d0033 100%
+    );
 }
 
-/* Camada de estrelas no fundo */
+/* CAMADA DAS ESTRELAS */
 body::before {
+
   content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?q=80&w=2070&auto=format&fit=crop");
-  background-size: cover;
-  opacity: 0.12;
-  z-index: -1;
-}
 
-/* Menu superior */
-header {
-  width: 100%;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(9, 0, 21, 0.85);
   position: fixed;
+
   top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  /*
+    Imagem de estrelas
+  */
+
+  background-image:
+    url("https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?q=80&w=2070&auto=format&fit=crop");
+
+  background-size: cover;
+
+  background-position: center;
+
+  /*
+    Transparência das estrelas
+  */
+
+  opacity: 0.18;
+
+  /*
+    Faz as estrelas ficarem atrás do conteúdo
+  */
+
+  z-index: -2;
+
+  pointer-events: none;
 }
 
-/* Logo Lumos */
-header h1 span {
-  color: var(--roxo);
+/* NÉVOA / NUVENS ESPACIAIS */
+body::after {
+
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(255, 0, 255, 0.08),
+      transparent 25%
+    ),
+
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(138, 43, 226, 0.10),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(75, 0, 130, 0.10),
+      transparent 35%
+    );
+
+  filter: blur(60px);
+
+  z-index: -1;
+
+  pointer-events: none;
 }
 
-/* Links do menu */
-nav a {
-  color: var(--texto-suave);
-  text-decoration: none;
-  margin-left: 25px;
-}
+/* FAZ AS ESTRELAS BRILHAREM LEVEMENTE */
+@keyframes brilho {
 
-nav a:hover {
-  color: var(--roxo-claro);
-}
-
-/* Conteúdo principal */
-main {
-  width: 90%;
-  max-width: 1000px;
-  margin: auto;
-}
-
-/* Primeira seção */
-.hero {
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
-/* Título principal */
-.hero h2 {
-  font-size: 3.5rem;
-  margin: 15px 0;
-}
-
-/* Textos menores */
-.hero p {
-  color: var(--texto-suave);
-  font-size: 1.1rem;
-}
-
-/* Títulos das seções */
-.titulo-secao {
-  margin: 60px 0 25px;
-  border-bottom: 1px solid rgba(255,255,255,0.12);
-  padding-bottom: 15px;
-}
-
-/* Card genérico */
-.card,
-.card-livro {
-  background: var(--card);
-  border: 1px solid rgba(192, 132, 252, 0.25);
-  border-radius: 22px;
-  padding: 28px;
-  backdrop-filter: blur(8px);
-}
-
-/* Card do livro */
-.card-livro {
-  display: flex;
-  gap: 25px;
-  align-items: center;
-}
-
-/* Capa do livro */
-.card-livro img {
-  width: 160px;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 14px;
-}
-
-/* Gênero do livro */
-.card-livro span {
-  display: inline-block;
-  margin: 10px 0;
-  color: var(--roxo-claro);
-  font-weight: bold;
-}
-
-/* Estrelas */
-.estrelas {
-  color: gold;
-  margin: 12px 0;
-}
-
-/* Textos dos cards */
-.card p,
-.card-livro p {
-  color: var(--texto-suave);
-  line-height: 1.7;
-}
-
-/* Rodapé */
-footer {
-  text-align: center;
-  padding: 40px;
-  margin-top: 80px;
-  color: var(--texto-suave);
-}
-
-/* Responsivo: muda o layout no celular */
-@media (max-width: 700px) {
-  header {
-    flex-direction: column;
-    gap: 15px;
+  0% {
+    opacity: 0.15;
   }
 
-  nav a {
-    margin: 0 8px;
+  50% {
+    opacity: 0.22;
   }
 
-  .hero h2 {
-    font-size: 2.3rem;
+  100% {
+    opacity: 0.15;
   }
+}
 
-  .card-livro {
-    flex-direction: column;
-    text-align: center;
-  }
+/* APLICA A ANIMAÇÃO */
+body::before {
+
+  animation: brilho 6s infinite ease-in-out;
 }
