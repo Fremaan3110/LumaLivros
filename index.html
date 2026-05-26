@@ -1,112 +1,209 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <!-- Configura acentos e caracteres do português -->
   <meta charset="UTF-8">
-
-  <!-- Faz o site funcionar melhor no celular -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Nome que aparece na aba do navegador -->
   <title>Lumos — Diário Literário</title>
 
-  <!-- Ícones de estrelas -->
+  <!-- Ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- Conecta o HTML ao CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- Cabeçalho fixo do site -->
-  <header>
-    <h1>Lumos<span>.</span></h1>
+  <!-- MENU LATERAL -->
+  <aside class="sidebar">
+    <div class="logo-area">
+      <h1>Lumos<span>.</span></h1>
+      <p>descobrindo mundos<br>entre linhas</p>
+    </div>
 
-    <nav>
-      <a href="#inicio">Início</a>
-      <a href="#estante">Estante</a>
-      <a href="#playlist">Playlist</a>
+    <nav class="menu-lateral">
+      <a href="#inicio"><i class="fa-solid fa-house"></i> início</a>
+      <a href="#estante"><i class="fa-solid fa-book-open"></i> minha estante</a>
+      <a href="#leituras"><i class="fa-solid fa-list"></i> leituras</a>
+      <a href="#resenhas"><i class="fa-regular fa-heart"></i> resenhas</a>
+      <a href="#citacoes"><i class="fa-solid fa-quote-left"></i> citações</a>
+      <a href="#sobre"><i class="fa-regular fa-user"></i> sobre mim</a>
+      <a href="#contato"><i class="fa-regular fa-envelope"></i> contato</a>
     </nav>
-  </header>
 
-  <!-- Conteúdo principal -->
-  <main>
+    <div class="sidebar-card">
+      <div class="lua"></div>
+      <p>leitora desde</p>
+      <strong>2018</strong>
+    </div>
+  </aside>
 
-    <!-- Primeira área do site -->
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="conteudo">
+
+    <!-- TOPO -->
+    <header class="topo">
+      <div class="busca">
+        <input type="text" placeholder="Buscar livros, autores, gêneros...">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+
+      <div class="perfil">
+        <div class="avatar"></div>
+        <div>
+          <strong>Olá, estelar</strong>
+          <p>explorando mundos ✦</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
     <section class="hero" id="inicio">
-      <p>Olá, eu sou a Karen Freman ✦</p>
+      <div>
+        <h2>bem-vindo ao meu<br><span>universo literário ✦</span></h2>
 
-      <h2>acendo histórias<br>entre livros e estrelas.</h2>
+        <p>
+          Aqui, cada livro lido é uma nova estrela adicionada à minha constelação.
+        </p>
 
-      <p>
-        Um diário literário com resenhas, sentimentos,
-        trilhas sonoras e um pouco de tecnologia.
-      </p>
+        <button>explorar minhas leituras ✦</button>
+      </div>
     </section>
 
-    <!-- Área dos livros -->
-    <section id="estante">
-      <h2 class="titulo-secao">✦ Leituras Atuais ✦</h2>
+    <!-- ESTATÍSTICAS -->
+    <section class="stats">
+      <div>
+        <i class="fa-solid fa-book-open"></i>
+        <strong>72</strong>
+        <p>livros lidos</p>
+      </div>
 
-      <article class="card-livro">
-        <img 
-          src="assets/imagens/a-ultima-carta.jpg" 
-          alt="Capa do livro A Última Carta"
-        >
+      <div>
+        <i class="fa-solid fa-star"></i>
+        <strong>4.6</strong>
+        <p>média geral</p>
+      </div>
+
+      <div>
+        <i class="fa-solid fa-moon"></i>
+        <strong>12</strong>
+        <p>leituras este ano</p>
+      </div>
+
+      <div>
+        <i class="fa-solid fa-planet-ringed"></i>
+        <strong>35</strong>
+        <p>autores favoritos</p>
+      </div>
+    </section>
+
+    <!-- LEITURAS RECENTES -->
+    <section id="estante">
+      <div class="titulo-linha">
+        <h2>leituras recentes ✦</h2>
+        <a href="#">ver todas →</a>
+      </div>
+
+      <div class="grid-livros">
+
+        <article class="livro">
+          <img src="assets/imagens/a-ultima-carta.jpg" alt="A Última Carta">
+          <h3>A Última Carta</h3>
+          <p>Rebecca Yarros</p>
+          <div class="estrelas">★★★★★</div>
+        </article>
+
+        <article class="livro">
+          <img src="assets/imagens/livro2.jpg" alt="Livro">
+          <h3>O Reino dos Corvos</h3>
+          <p>Leigh Bardugo</p>
+          <div class="estrelas">★★★★☆</div>
+        </article>
+
+        <article class="livro">
+          <img src="assets/imagens/livro3.jpg" alt="Livro">
+          <h3>As Quatro Luas</h3>
+          <p>Carina Rissi</p>
+          <div class="estrelas">★★★★★</div>
+        </article>
+
+        <article class="livro">
+          <img src="assets/imagens/livro4.jpg" alt="Livro">
+          <h3>Trono de Vidro</h3>
+          <p>Sarah J. Maas</p>
+          <div class="estrelas">★★★★★</div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SOBRE + RESENHA -->
+    <section class="duas-colunas" id="resenhas">
+
+      <article class="card sobre">
+        <h2>sobre o blog ✦</h2>
+        <p>
+          Este é meu cantinho no universo para compartilhar opiniões,
+          surtos literários, citações favoritas e tudo o que os livros me fazem sentir.
+        </p>
+        <button>saiba mais sobre mim →</button>
+      </article>
+
+      <article class="card resenha-destaque">
+        <img src="assets/imagens/a-ultima-carta.jpg" alt="A Última Carta">
 
         <div>
+          <h2>resenha em destaque ✦</h2>
           <h3>A Última Carta</h3>
-
-          <span>Romance / Drama</span>
-
-          <div class="estrelas">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
+          <p>Rebecca Yarros</p>
+          <div class="estrelas">★★★★★</div>
 
           <p>
-            Eu simplesmente vivi esse livro com a Ella e o Beckett.
-            Chorei, me apaixonei pelos personagens e vou guardar essa
-            história como uma experiência inesquecível.
+            Um livro que me destruiu e me reconstruiu em poucas páginas.
+            Doloroso, necessário e impossível de esquecer.
           </p>
+
+          <button>ler resenha completa →</button>
         </div>
       </article>
+
     </section>
 
-    <!-- Área da playlist -->
-    <section id="playlist">
-      <h2 class="titulo-secao">✦ Trilha Sonora da Viagem ✦</h2>
+    <!-- CITAÇÕES -->
+    <section id="citacoes">
+      <div class="titulo-linha">
+        <h2>citações favoritas ✦</h2>
+        <a href="#">ver todas →</a>
+      </div>
 
-      <article class="card">
-        <h3>Minha Playlist de Estudo</h3>
+      <div class="citacoes-grid">
+        <article class="citacao">
+          <span>“</span>
+          <p>Algumas histórias não têm fim, elas apenas continuam vivendo em nós.</p>
+          <small>— Desconhecido</small>
+        </article>
 
-        <p>O que toca enquanto eu programo e leio.</p>
+        <article class="citacao">
+          <span>“</span>
+          <p>Os livros são espelhos: você só vê neles o que já existe dentro de você.</p>
+          <small>— Carlos Ruiz Zafón</small>
+        </article>
 
-        <iframe 
-          src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO3vuU6c"
-          width="100%" 
-          height="352" 
-          style="border-radius:12px"
-          frameborder="0"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy">
-        </iframe>
-      </article>
+        <article class="citacao">
+          <span>“</span>
+          <p>Entre páginas e estrelas, encontrei minha casa.</p>
+          <small>— Lumos</small>
+        </article>
+      </div>
     </section>
-    <main class="container scroll-interno"></main>
+
+    <footer>
+      <p>feito com 💜 e estrelas</p>
+      <p>© 2026 Karen Freman</p>
+    </footer>
+
   </main>
 
-  <!-- Rodapé -->
-  <footer>
-    <p>feito com 💜 e estrelas</p>
-    <p>© 2026 Karen Freman</p>
-  </footer>
-
-  <!-- Conecta o JavaScript -->
-  <script src="script.js"></script>
 </body>
 </html>
